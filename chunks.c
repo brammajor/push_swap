@@ -6,7 +6,7 @@
 /*   By: brmajor <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 13:19:50 by brmajor           #+#    #+#             */
-/*   Updated: 2023/05/23 15:58:27 by brmajor          ###   ########.fr       */
+/*   Updated: 2023/05/23 17:15:09 by brmajor          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,7 +98,7 @@ int	chunk_size(t_node **astack)
 
 	size = size_count(astack);
 	if (size <= 100)
-		chunk = size / 5;
+		chunk = size / 6;
 	else
 		chunk = size / 13;
 	return (chunk);
