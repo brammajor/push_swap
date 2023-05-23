@@ -6,15 +6,15 @@
 /*   By: brmajor <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 13:39:06 by brmajor           #+#    #+#             */
-/*   Updated: 2023/05/23 18:26:36 by brmajor          ###   ########.fr       */
+/*   Updated: 2023/05/23 18:32:47 by brmajor          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# include "libft_custom/libft.h"
-# include "libft_custom/ft_printf.h"
+# include "libft/libft.h"
+# include "libft/ft_printf.h"
 
 typedef struct s_node
 {	
@@ -41,7 +41,7 @@ int		rot(t_node **head, char x);
 int		rerot(t_node **head, char x);
 
 int		size_count(t_node **head);
-int		sort_size(t_node **head, t_node **bstack);
+void	sort_size(t_node **head, t_node **bstack);
 
 int		is_sorted(t_node **head);
 int		is_all_sorted(t_node **astack, t_node **bstack);

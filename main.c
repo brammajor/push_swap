@@ -6,7 +6,7 @@
 /*   By: brmajor <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 14:45:21 by brmajor           #+#    #+#             */
-/*   Updated: 2023/05/23 18:19:19 by brmajor          ###   ########.fr       */
+/*   Updated: 2023/05/23 18:46:21 by brmajor          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,9 @@ int	main(int ac, char **av)
 	check_error(ac, av);
 	astack = makestack(ac, av);
 	bstack = NULL;
-	if (is_sorted(&astack) == 0)
-	{
-		printstack(&astack);
-		return (0);
-	}
 	give_index(&astack);
 	sort_size(&astack, &bstack);
+	if (is_all_sorted(&astack, &bstack))
+		printstack(&astack);
+	//add free function
 }
