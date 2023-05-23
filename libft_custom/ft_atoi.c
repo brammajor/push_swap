@@ -6,7 +6,7 @@
 /*   By: brmajor <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 12:30:56 by brmajor           #+#    #+#             */
-/*   Updated: 2023/03/28 16:44:42 by brmajor          ###   ########.fr       */
+/*   Updated: 2023/05/23 17:31:01 by brmajor          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,18 +41,17 @@ static int	convert(int i, const char *str, int sign)
 		i++;
 	}
 	if (result * sign < -2147483647 - 1)
-			return (0);
+		return (0);
 	else if (result * sign > 2147483647)
-			return (0);
-
+		return (0);
 	return (result);
 }
 
 int	ft_atoi(const char *nptr)
 {
-	int	i;
+	int			i;
+	int			sign;
 	long int	nbr;
-	int	sign;
 
 	if (nptr[0] == '\0')
 		return (0);

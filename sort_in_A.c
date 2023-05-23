@@ -6,20 +6,20 @@
 /*   By: brmajor <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/23 14:58:46 by brmajor           #+#    #+#             */
-/*   Updated: 2023/05/23 15:26:37 by brmajor          ###   ########.fr       */
+/*   Updated: 2023/05/23 17:24:54 by brmajor          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	max_to_A(t_node **astack, t_node **bstack)
+void	max_to_a(t_node **astack, t_node **bstack)
 {
 	int	index;
 
 	index = size_count(bstack) - 1;
 	while (*bstack)
 	{
-		if (rot_or_rerot_B(bstack, index))
+		if (rot_or_rerot_b(bstack, index))
 		{
 			while ((*bstack)->index != index)
 				rot(bstack, 'b');
@@ -34,7 +34,7 @@ void	max_to_A(t_node **astack, t_node **bstack)
 	}
 }
 
-int	rot_or_rerot_B(t_node **bstack, int index)
+int	rot_or_rerot_b(t_node **bstack, int index)
 {
 	t_node	*curr;
 	int		op_count;
@@ -51,4 +51,3 @@ int	rot_or_rerot_B(t_node **bstack, int index)
 	else
 		return (0);
 }
-

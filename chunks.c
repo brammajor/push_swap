@@ -6,27 +6,25 @@
 /*   By: brmajor <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 13:19:50 by brmajor           #+#    #+#             */
-/*   Updated: 2023/05/23 17:15:09 by brmajor          ###   ########.fr       */
+/*   Updated: 2023/05/23 18:01:31 by brmajor          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	chunks_to_B(t_node **astack, t_node **bstack)
+void	chunks_to_b(t_node **astack, t_node **bstack)
 {
-	int	OG_chunk;
+	int	og_chunk;
 	int	newchunk;
 	int	rotcount;
 	int	rerotcount;
 
-	OG_chunk = chunk_size(astack);
+	og_chunk = chunk_size(astack);
 	newchunk = 0;
-	if (!is_all_sorted(astack, bstack))
-		return ;
 	while (*astack)
 	{
 		if (check_chunk(astack, newchunk))
-			newchunk = newchunk + OG_chunk;
+			newchunk = newchunk + og_chunk;
 		rotcount = rot_count(astack, newchunk);
 		rerotcount = rerot_count(astack, newchunk);
 		if (rotcount < rerotcount)
@@ -61,6 +59,7 @@ int	rot_count(t_node **astack, int chunk)
 {
 	t_node	*curr;
 	int		rotcount;
+
 	curr = *astack;
 	rotcount = 0;
 	while (curr)

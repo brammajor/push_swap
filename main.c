@@ -6,7 +6,7 @@
 /*   By: brmajor <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 14:45:21 by brmajor           #+#    #+#             */
-/*   Updated: 2023/05/23 15:29:39 by brmajor          ###   ########.fr       */
+/*   Updated: 2023/05/23 18:19:19 by brmajor          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,5 @@ int	main(int ac, char **av)
 		return (0);
 	}
 	give_index(&astack);
-	//printstack(&astack);
 	sort_size(&astack, &bstack);
-	//printstack(&astack);
-	//ft_printf("\n");
-	//if (is_all_sorted(&astack, &bstack))
-		printstack(&bstack);
 }
