@@ -24,5 +24,6 @@ int	main(int ac, char **av)
 	sort_size(&astack, &bstack);
 	if (is_all_sorted(&astack, &bstack))
 		printstack(&astack);
-	//add free function
+	free_memory(&astack);
+	free_memory(&bstack);
 }

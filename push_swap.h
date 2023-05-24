@@ -63,4 +63,6 @@ int		chunk_size(t_node **astack);
 void	max_to_a(t_node **astack, t_node **bstack);
 int		rot_or_rerot_b(t_node **bstack, int index);
 
+void	free_memory(t_node **stack);
+
 #endif
