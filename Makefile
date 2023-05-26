@@ -6,17 +6,13 @@
 #    By: brmajor <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/24 13:54:49 by brmajor           #+#    #+#              #
-#    Updated: 2023/05/22 18:34:36 by brmajor          ###   ########.fr        #
+#    Updated: 2023/05/26 14:34:50 by brmajor          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRC = $(shell find . -name "*.c" -not -path "./push_swap_visualizer/*")
+SRC = chunks_to_b.c errorcheck.c free.c index.c main.c makestacks.c operations.c sizecheck.c sort_in_A.c sort_small.c sort_utils.c push_swap.h \
 
-OBJ_DIR = obj/
-
-OBJ_FILES = $(SRC:%.c=$(OBJ_DIR)%.o)
-
-CC = gcc
+CC = gcc -g
 
 CFLAGS = -Wall -Werror -Wextra
 
@@ -24,24 +20,21 @@ NAME = push_swap
 
 RM = rm -rf
 
-MKDIR = mkdir -p $(@D)
-
-$(OBJ_DIR)%.o: %.c 
-	       $(MKDIR) 
-	       $(CC) $(CFLAGS) -c $< -o $@
-
-$(NAME): $(OBJ_FILES) 
-	 $(MKDIR) 
-	 $(CC) -g -o $(NAME) $(OBJ_FILES) 
-	 chmod +x $(NAME)
+$(NAME):
+	@echo Making libft...
+	@make -C libft/ > /dev/null
+	@echo Compiling push_swap...
+	@$(CC) $(CFLAGS) $(SRC) -L libft/ -l ft -o $(NAME)
 
 all: $(NAME)
 
 clean:
-	$(RM) $(OBJ_DIR)
+	@echo Removing obj/ and libft...
+	@make -C libft/ fclean > /dev/null
 
 fclean: clean
-	$(RM) $(NAME)
+	@echo Removing push_swap...
+	@$(RM) $(NAME)
 
 re: fclean all
 
